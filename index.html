@@ -1,0 +1,179 @@
+ 
+ <!doctype html>
+<html lang="en">
+<head>
+  <style>
+    body{
+      background-color:red;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Classification Image</title>
+
+  <body class="bg-gradient">
+	     
+    <div class="container-fluid ">
+      <div class="row justify-content-center" style="background-color:rgb(176,224,230)">
+         <div class="col-md-12">
+           
+          <h1 style="text-align:left">DetectiveHouse</h1>
+		
+          
+
+      </div>
+    </div>
+	               
+    </div>
+
+    <p style="margin-bottom:2cm;"></p>
+
+    <div  class="row justify-content-between">
+
+      <div class="col-md-6 m-3">
+            <h3 class="" >Image classification : </h3>
+             <p class="lead">Choisir une photo et découvrir :</p>    
+          <form class="row g-3"  action="" method=post enctype=multipart/form-data>
+		  
+            <div class="col-auto">
+			  <input type="submit" class="btn btn-success mb-3" style="margin-left:370px" value="predict">
+              <input class="form-control" type="file" style="width:350px;margin-top:-55px" name="file" id="File">
+            </div>
+         
+          </form>
+          <div class="bs-component mt-4">
+            <table class="table table-hover">
+                <tr class="table-active">
+                  <th scope="col">Image</th>
+                  <th scope="col">Resultat</th>
+                </tr>
+                <tr>
+                    <th scope="row"> <img width="224" height="224" src="{{imagesource}}" /> </th>
+					<td>
+					  <ul style="margin-left:-60px">
+					   {{ label0 }} {{deuxpoints}}  {{ percentage0 }}
+					  </ul><br/>
+					   <ul style="margin-left:-60px">
+					   {{ label1 }} {{deuxpoints}} {{ percentage1 }}
+					   </ul><br/>
+					   <ul style="margin-left:-60px">
+					   {{ label2 }} {{deuxpoints}} {{ percentage2 }}
+					   </ul><br/>
+					   <ul style="margin-left:-60px">
+					   {{ label3 }} {{deuxpoints}} {{ percentage3 }}
+					   </ul>
+					  
+					</td>
+                  </tr>
+            </table> 
+        </div>
+	
+      </div>
+      <div class="col-md-4">
+           <h3 style="margin-top:30px;margin-left:-80px">Analyse de contour && calcul de distance : </h3>
+
+		<form action="/stream" method=post enctype=multipart/form-data>
+		<input type=text name=namefile style="border-color:gray;margin-left:5px;margin-top:40px;width:150px;height:30px" value="{{namefile}}"/>
+		<input type="submit" class="btn btn-success mb-3" style="margin-left:10px;margin-top:10px" value="Découvrir">
+		
+    </form>	<br/><br/>
+	
+	  
+
+      </div>
+	  
+	  <!-- Footer -->
+
+
+	 
+  </body>
+ 
+ <footer class="text-center text-white" style="height:50px">
+  <!-- Grid container -->
+  <!-- Copyright -->
+  <div class="text-center p-3" style="height:100px;background-color: rgb(0,0,255)">
+    © 2022 Copyright : Imad Bakloul && Imad Barrahou 
+    <i><u>Projet Integré IV</u></i>
+  </div>
+  <!-- Copyright -->
+</footer>
+	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <!doctype html> -->
+<!-- <html lang="en"> -->
+<!-- <head> -->
+  <!-- <meta charset="UTF-8"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <!-- <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}"> -->
+  <!-- <title>Classification Image</title> -->
+  <!-- <body class style="margin:10px;padding:10px"> -->
+    <!-- <div class="page-header" id="banner"> -->
+      <!-- <div class="row"> -->
+        <!-- <div class="col-lg-8 col-md-7 col-sm-6"> -->
+          <!-- <h1>DetectiveHouse</h1> -->
+		  <!-- <h3>Image classification : </h3> -->
+          <!-- <p class="lead">Upload the image and find out </p> -->
+        <!-- </div> -->
+      <!-- </div> -->
+      <!-- <form action="" method=post enctype=multipart/form-data> -->
+        <!-- <input type=file name=file> -->
+        <!-- <input type=submit value=Upload> -->
+    <!-- </form> -->
+    <!-- </div> -->
+    <!-- <p style="margin-bottom:2cm;"></p> -->
+    <!-- <div class="row"> -->
+        <!-- <div class="col-lg-4"> -->
+          <!-- <div class="page-header"> -->
+            <!-- <h3 id="tables">Result</h3> -->
+          <!-- </div> -->
+          <!-- <div class="bs-component"> -->
+            <!-- <table class="table table-hover"> -->
+                <!-- <tr class="table-active"> -->
+                  <!-- <th scope="col">Image</th> -->
+                  <!-- <th scope="col">Predict</th> -->
+                <!-- </tr> -->
+                <!-- <tr> -->
+                    <!-- <th scope="row"> <img width="224" height="224" src="{{imagesource}}" /> </th> -->
+                    <!-- <td> {{label}} </td> -->
+                  <!-- </tr> -->
+            <!-- </table>  -->
+        <!-- </div> -->
+		<!-- <h3>Analyse de Contour : </h3> -->
+		 <!-- <p class="lead">Upload the image  </p> -->
+
+		<!-- <form action="/stream" method=post enctype=multipart/form-data> -->
+        <!-- <input type=file name=file> -->
+        <!-- <input type=submit value=Upload> -->
+		<!-- <a href="output.png" download>Download </a> -->
+		
+    <!-- </form>	 -->
+		   <!-- <img src={{ url_for('stream') }}> -->
+
+      <!-- </div> -->
+
+	 
+  <!-- </body> -->
